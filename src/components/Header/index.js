@@ -4,32 +4,29 @@ import logo from "../../assets/logo/logo.svg"
 import styles from './Header.module.scss'
 import Image from 'next/image';
 
-
 function index() {
-
-    
 
     return (
         <header className={styles.header}>
             <div className={styles.headerContent}>
-                <div className={styles.logo} onClick={() => history.push('/')}>
+                <div className={styles.logo} >
                     <Image width={128} src={logo} alt='logo' />
                 </div>
                 <div className={styles.rightContent}>
 
-                    {false ? (
+                    {true ? (
                         <>
-                            <div className={styles.addProduct} onClick={() => history.push('/upload-product')}>
+                            <div className={styles.addProduct} >
                                 {" "}
                                 <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
                             </div>
-                            <div className={styles.account} onClick={() => history.push('/account')}>
+                            <div className={styles.account}>
                                 {" "}
                                 <FaUser /> Hesabım
                             </div>
                         </>
                     ) : (
-                        <div className={styles.account} onClick={() => history.push('/auth')}>
+                        <div className={styles.account} >
                             {" "}
                             <FaUser /> Giriş Yap
                         </div>

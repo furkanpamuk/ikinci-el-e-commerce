@@ -2,6 +2,7 @@ const path = require('path')
 
 const nextConfig = {
   reactStrictMode: true,
+  // for mixins
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
@@ -15,7 +16,6 @@ const nextConfig = {
   images: {
     domains: ['bootcamp.akbolat.net'],
   }
-
 }
 
 module.exports = nextConfig
