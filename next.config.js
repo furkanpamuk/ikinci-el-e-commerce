@@ -6,7 +6,8 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
   env: {
-    baseURL: 'https://bootcamp.akbolat.net'
+    baseURL: 'https://bootcamp.akbolat.net',
+    currency: 'TL'
   },
   publicRuntimeConfig: {
     baseURL: 'https://bootcamp.akbolat.net'
@@ -14,6 +15,7 @@ const nextConfig = {
   images: {
     domains: ['bootcamp.akbolat.net'],
   }
+
 }
 
 module.exports = nextConfig

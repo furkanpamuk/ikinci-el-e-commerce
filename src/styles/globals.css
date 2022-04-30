@@ -9,6 +9,10 @@
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  background-color: #f2f2f2 ;
+}
+
 .container {
   width: 1480px;
   margin: 0 auto;

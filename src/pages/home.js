@@ -1,9 +1,11 @@
 import React from 'react'
-import Layout from '../components/Layout/Layout';
 import { API } from '../services';
+import Img from 'next/image'
+
+import Layout from '../components/Layout/Layout';
 import Banner from '../components/homepage/Banner/Banner';
 import Categories from '../components/homepage/Categories/Categories';
-import Img from 'next/image'
+import Products from '../components/Products/Products';
 
 function Home({ products, categories }) {
 
@@ -15,20 +17,8 @@ function Home({ products, categories }) {
     <Layout>
       <Banner />
       <Categories categories={categories} />
-      <div>
+      <Products products={products.filter(item => item.image !== null && item.image.formats.small?.url)} />
 
-
-        <h1>APİ DENEMELERİ</h1>
-
-        <h1>Products</h1>
-        {
-          products.filter(item => item.image !== null && item.image.formats.small?.url).map((product) =>
-            (<Img width={200} height={300} key={product.id} src={`${process.env.baseURL}${product.image.formats.small.url}`} />))
-        }
-
-
-
-      </div>
 
     </Layout>
   )
