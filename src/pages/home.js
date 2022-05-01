@@ -9,22 +9,15 @@ import Products from '../components/Products/Products';
 
 function Home({ products, categories }) {
 
-  const controlImg = (product) => {
-
-  }
-
   return (
     <Layout>
       <Banner />
       <Categories categories={categories} />
       <Products products={products.filter(item => item.image !== null && item.image.formats.small?.url)} />
-
-
     </Layout>
   )
 }
 export async function getStaticProps() {
-
   const categories = await API.get('categories')
   const products = await API.get('/products')
 
