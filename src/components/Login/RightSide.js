@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../constant/containers/logo/Logo'
 import styles from './Login.module.scss'
-import InputField from './Fields/InputField'
-import FormActionBtn from './Fields/FormActionBtn'
+import { Formik } from 'formik'
+import LoginForm from './LoginForm'
+import * as yup from 'yup'
 
 
 function RightSide() {
+
+    const defaultValues = {
+        identifier: '',
+        password: ''
+    }
+
+    const [formValues, setFormValues] = useState(defaultValues)
+
+    const handleFormSubmit = (values, resetForm) => {
+        setFormValues(values)
+        console.log(values);
+    }
+
     return (
         <div className={styles.rightSide}  >
             <div className={styles.loginWrap}>
@@ -18,24 +32,30 @@ function RightSide() {
                         <p>Fırsatlardan yararlanmak için giriş yap!</p>
                     </div>
                     <div className={styles.loginForm}>
-                        <form >
-                            <InputField
-                                label={'Email'}
-                                inputType={'email'}
-                                placeholder={'Lütfen emailiniz girin'}
-                            />
-                            <InputField
-                                label={'Şifre'}
-                                inputType={'password'}
-                                placeholder={'Lütfen şifreinizi girin'}
-                            />
-                            <div className={styles.forgotPw} >
-                                <span>Şifremi unuttum</span>
-                            </div>
-                            <div>
-                                <FormActionBtn label={'Giriş Yap'} />
-                            </div>
-                        </form>
+                        <Formik
+                            initialValues={formValues}
+                            validationSchema={yup.object().shape({
+                                identifier: yup.string().required(),
+                                password: yup.string().required()
+                            })}
+                            onSubmit={(values, { resetForm }) => handleFormSubmit(values, resetForm)}
+                        >
+                            {
+                                ({
+                                    values,
+                                    touched,
+                                    errors,
+                                    handleChange,
+                                    handleSubmit }) =>
+                                    <LoginForm
+                                        values={values}
+                                        touched={touched}
+                                        errors={errors}
+                                        handleChange={handleChange}
+                                        handleSubmit={handleSubmit}
+                                    />
+                            }
+                        </Formik>
                     </div>
                     <div className={styles.loginFooter}>
                         <p>Hesabın yok mu? <span>Üye Ol</span> </p>

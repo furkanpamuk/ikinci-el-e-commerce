@@ -9,12 +9,12 @@
 .loginPage {
     height: 100vh;
     display: flex;
-    
+
     .loginpic {
-    width: 40%;
-    height: 100%;
-    background-color: red;
-    position: relative;
+        width: 40%;
+        height: 100%;
+        background-color: red;
+        position: relative;
     }
 
     .rightSide {
@@ -26,22 +26,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            
+
             .loginLogo {
                 padding: 55px 0;
 
             }
+
             .loginHeader {
                 text-align: center;
             }
-            
+
             .loginArea {
-                background-color: $background-light-color ;
+                background-color: $background-light-color;
                 padding: 70px 90px;
                 border-radius: 8px;
                 box-shadow: 0px 3px 12px #1E36480A;
             }
-            
+
             .loginForm {
                 display: flex;
                 flex-direction: column;
@@ -51,7 +52,7 @@
 
                 .formControl {
                     padding: 7.5px 0;
-                    
+
                     .formLabel {
                         font-size: 15px;
                         padding-bottom: 5px;
@@ -64,14 +65,18 @@
                         background-color: $input-background-color;
                         border-radius: 8px;
                     }
+
+
                 }
+
                 .forgotPw {
                     text-align: end;
                     font-size: 12px;
                     color: $text-passive-color;
-                    margin-bottom: 30px;
+                    cursor: pointer;
                 }
             }
+
             .loginFooter {
                 font-size: 15px;
                 margin-top: 20px;
@@ -79,11 +84,9 @@
 
                 span {
                     color: $primary-color;
+                    cursor: pointer;
                 }
             }
         }
     }
 }
-
-
-

@@ -9,17 +9,16 @@ border-radius: 8px;
 color: #FFF;
 font-weight: bold;
 width: 100%;
+margin-top: 30px;
+cursor: pointer;
+
+
 `
 
 
 const FormActionBtn = ({ label, onClick = null }) => {
-
-
-
     return (
-        <Button
-
-        >{label}</Button>
+        <Button type='submit' >{label}</Button>
     )
 }
 
