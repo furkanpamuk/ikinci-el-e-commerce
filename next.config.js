@@ -15,6 +15,9 @@ const nextConfig = {
   },
   images: {
     domains: ['bootcamp.akbolat.net'],
+  },
+  compiler: {
+    styledComponents: true,
   }
 }
 

@@ -18,7 +18,7 @@ function RightSide() {
                         <p>Fırsatlardan yararlanmak için giriş yap!</p>
                     </div>
                     <div className={styles.loginForm}>
-                        <form action="">
+                        <form >
                             <InputField
                                 label={'Email'}
                                 inputType={'email'}
@@ -26,18 +26,20 @@ function RightSide() {
                             />
                             <InputField
                                 label={'Şifre'}
-                                inputType={'passaword'}
+                                inputType={'password'}
                                 placeholder={'Lütfen şifreinizi girin'}
                             />
                             <div className={styles.forgotPw} >
                                 <span>Şifremi unuttum</span>
                             </div>
                             <div>
-                                <FormActionBtn label={'neden yapmıyorsun'} />
+                                <FormActionBtn label={'Giriş Yap'} />
                             </div>
                         </form>
                     </div>
-                    <div className={styles.loginFooter}></div>
+                    <div className={styles.loginFooter}>
+                        <p>Hesabın yok mu? <span>Üye Ol</span> </p>
+                    </div>
                 </div>
             </div>
         </div>
