@@ -3,9 +3,23 @@ import Logo from '../../constant/containers/logo/Logo'
 import styles from '../Login/Login.module.scss'
 import InputField from '../Fields/InputField'
 import FormActionBtn from '../Fields/FormActionBtn'
-
+import { useState } from 'react'
+import RegisterForm from './RegisterForm'
 
 function RightSide() {
+
+    const defaultValues = {
+        username: '',
+        password: ''
+    }
+
+    const [formValues, setFormValues] = useState(defaultValues)
+
+    const handleFormSubmit = (values, resetForm) => {
+        setFormValues(values)
+        console.log(values);
+    }
+
     return (
         <div className={styles.rightSide}  >
             <div className={styles.loginWrap}>
