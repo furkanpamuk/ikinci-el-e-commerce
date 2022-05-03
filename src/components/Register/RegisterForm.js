@@ -17,6 +17,7 @@ function RegisterForm({ values, touched, errors, handleChange, handleSubmit }) {
                 errorStatus={(errors.username) ? true : false}
                 name={'username'}
             />
+            <span> {errors.username} </span>
             <InputField
                 label={'Şifre'}
                 inputType={'password'}
@@ -26,6 +27,8 @@ function RegisterForm({ values, touched, errors, handleChange, handleSubmit }) {
                 errorStatus={(errors.password) ? true : false}
                 name={'password'}
             />
+            <span> {errors.password} </span>
+
             <div>
                 <FormActionBtn label={'Üye Ol'} />
             </div>

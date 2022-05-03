@@ -38,7 +38,8 @@ function RightSide() {
                         <Formik
                             initialValues={formValues}
                             validationSchema={yup.object().shape({
-                                username: yup.string('E-Mail alanı zorunludur!'),
+                                username: yup.string()
+                                    .required('E-Mail alanı zorunludur!'),
                                 password: yup
                                     .string()
                                     .min(8, 'Şifre en az 6 karakter olmalıdır!')
