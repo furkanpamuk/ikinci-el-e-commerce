@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import InputField from '../Fields/InputField'
 import FormActionBtn from '../Fields/FormActionBtn'
 import styles from './Login.module.scss'
 
 
 function LoginForm({ values, touched, errors, handleChange, handleSubmit }) {
-
-    useEffect(() => {
-        console.log(touched.identifier);
-    }, [touched])
 
     return (
         <form onSubmit={handleSubmit} >
@@ -20,7 +16,6 @@ function LoginForm({ values, touched, errors, handleChange, handleSubmit }) {
                 handleChange={handleChange}
                 errorStatus={(errors.identifier) ? true : false}
                 name={'identifier'}
-
             />
             <InputField
                 label={'Şifre'}

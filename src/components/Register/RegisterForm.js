@@ -4,9 +4,7 @@ import InputField from '../Fields/InputField'
 
 function RegisterForm({ values, touched, errors, handleChange, handleSubmit }) {
 
-    useEffect(() => {
-        console.log(touched.identifier);
-    }, [touched])
+
 
     return (
         <form onSubmit={handleSubmit} >
@@ -14,26 +12,22 @@ function RegisterForm({ values, touched, errors, handleChange, handleSubmit }) {
                 label={'Email'}
                 inputType={'email'}
                 placeholder={'Lütfen emailiniz girin'}
-                value={values.identifier}
+                value={values.username}
                 handleChange={handleChange}
-                errorStatus={(errors.identifier) ? true : false}
-                name={'identifier'}
-
+                errorStatus={(errors.username) ? true : false}
+                name={'username'}
             />
             <InputField
                 label={'Şifre'}
                 inputType={'password'}
-                placeholder={'Lütfen şifreinizi girin'}
+                placeholder={'Lütfen şifrenizi girin'}
                 value={values.password}
                 handleChange={handleChange}
                 errorStatus={(errors.password) ? true : false}
                 name={'password'}
             />
-            <div className={styles.forgotPw} >
-                <span>Şifremi unuttum</span>
-            </div>
             <div>
-                <FormActionBtn label={'Giriş Yap'} />
+                <FormActionBtn label={'Üye Ol'} />
             </div>
         </form>
     )

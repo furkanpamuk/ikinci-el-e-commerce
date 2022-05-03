@@ -5,6 +5,9 @@ import InputField from '../Fields/InputField'
 import FormActionBtn from '../Fields/FormActionBtn'
 import { useState } from 'react'
 import RegisterForm from './RegisterForm'
+import { Formik } from 'formik'
+import * as yup from 'yup'
+
 
 function RightSide() {
 
@@ -32,21 +35,35 @@ function RightSide() {
                         <p>Fırsatlardan yararlanmak için üye ol!</p>
                     </div>
                     <div className={styles.loginForm}>
-                        <form >
-                            <InputField
-                                label={'Email'}
-                                inputType={'email'}
-                                placeholder={'Lütfen emailiniz girin'}
-                            />
-                            <InputField
-                                label={'Şifre'}
-                                inputType={'password'}
-                                placeholder={'Lütfen şifreinizi girin'}
-                            />
-                            <div>
-                                <FormActionBtn label={'Üye Ol'} />
-                            </div>
-                        </form>
+                        <Formik
+                            initialValues={formValues}
+                            validationSchema={yup.object().shape({
+                                username: yup.string('E-Mail alanı zorunludur!'),
+                                password: yup
+                                    .string()
+                                    .min(8, 'Şifre en az 6 karakter olmalıdır!')
+                                    .max(20, 'Şifre en fazla 20 karakter olmalıdır!')
+                                    .required('Şifre alanı zorunludur!')
+                            })}
+                            onSubmit={(values, { resetForm }) => handleFormSubmit(values, resetForm)}
+                        >
+                            {
+                                ({
+                                    values,
+                                    touched,
+                                    errors,
+                                    handleChange,
+                                    handleSubmit
+                                }) =>
+                                    <RegisterForm
+                                        values={values}
+                                        touched={touched}
+                                        errors={errors}
+                                        handleChange={handleChange}
+                                        handleSubmit={handleSubmit}
+                                    />
+                            }
+                        </Formik>
                     </div>
                     <div className={styles.loginFooter}>
                         <p>Hesabın var mı?  <span>Giriş Yap</span> </p>
