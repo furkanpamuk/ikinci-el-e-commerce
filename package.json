@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "cookies-next": "^2.0.4",
     "formik": "^2.2.9",
     "next": "12.1.5",
     "node-sass": "^7.0.1",

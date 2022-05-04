@@ -4,8 +4,9 @@ import styles from './Login.module.scss'
 import { Formik } from 'formik'
 import LoginForm from './LoginForm'
 import * as yup from 'yup'
-import { successLogin } from '../../utils/helpers/toastHelper'
-
+import { authLogin } from '../../services/authService'
+import { useUserData } from '../../context/userContext'
+import Router from 'next/router'
 
 function RightSide() {
 
@@ -15,11 +16,17 @@ function RightSide() {
     }
 
     const [formValues, setFormValues] = useState(defaultValues)
+    const { setUser, setIsLogin } = useUserData();
 
-    const handleFormSubmit = (values, resetForm) => {
+    const handleFormSubmit = async (values, resetForm) => {
         setFormValues(values);
-        console.log(values);
-        successLogin();
+        const result = await authLogin(values)
+        console.log(result);
+        if (result.statusType) {
+            setUser(result.data?.user)
+            setIsLogin(true)
+            Router.push('/home')
+        }
     }
 
     return (

@@ -1,16 +1,16 @@
 import React from 'react'
-import Header from '../Header'
+import Header from '../Header/Header'
 import Head from 'next/head'
 
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
     <>
-    <Head>
+      <Head>
         <title>ikinci El</title>
-    </Head>
-    <Header/>
-    {children}
+      </Head>
+      <Header />
+      {children}
     </>
   )
 }

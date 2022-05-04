@@ -21,8 +21,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      products,
-      categories
+      products: products.data,
+      categories: categories.data,
     }
   }
 }

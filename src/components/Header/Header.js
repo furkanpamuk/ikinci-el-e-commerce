@@ -3,8 +3,11 @@ import { FaPlus, FaUser } from "react-icons/fa";
 import logo from "../../assets/logo/logo.svg"
 import styles from './Header.module.scss'
 import Image from 'next/image';
+import { useUserData } from '../../context/userContext';
 
-function index() {
+function Header() {
+
+    const { isLogin } = useUserData();
 
     return (
         <header className={styles.header}>
@@ -14,7 +17,7 @@ function index() {
                 </div>
                 <div className={styles.rightContent}>
 
-                    {true ? (
+                    {isLogin ? (
                         <>
                             <div className={styles.addProduct} >
                                 {" "}
@@ -37,4 +40,4 @@ function index() {
     );
 }
 
-export default index
+export default Header

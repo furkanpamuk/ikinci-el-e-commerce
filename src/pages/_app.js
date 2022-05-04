@@ -1,11 +1,12 @@
 import '../styles/globals.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
+import { UserProvider } from '../context/userContext'
 
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <UserProvider>
       <Component {...pageProps} />
       <ToastContainer
         position="top-right"
@@ -17,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         closeOnClick
         pauseOnHover
       />
-    </>
+    </UserProvider>
   )
 
 
