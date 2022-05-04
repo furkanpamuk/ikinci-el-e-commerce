@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { toast } from 'react-toastify'
 
 const Button = styled.button`
 padding: 10px 0;
@@ -11,14 +12,15 @@ font-weight: bold;
 width: 100%;
 margin-top: 30px;
 cursor: pointer;
-
-
 `
 
-
 const FormActionBtn = ({ label, onClick = null }) => {
+
+    const notify = () => {
+        toast("Giriş Başarılı!");
+    }
     return (
-        <Button type='submit' >{label}</Button>
+        <Button onClick={notify} type='submit'>{label}</Button>
     )
 }
 

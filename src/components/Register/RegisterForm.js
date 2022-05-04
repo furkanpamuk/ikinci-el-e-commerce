@@ -2,9 +2,7 @@ import React from 'react'
 import FormActionBtn from '../Fields/FormActionBtn'
 import InputField from '../Fields/InputField'
 
-function RegisterForm({ values, touched, errors, handleChange, handleSubmit }) {
-
-
+function RegisterForm({ values, errors, handleChange, handleSubmit }) {
 
     return (
         <form onSubmit={handleSubmit} >
@@ -28,7 +26,6 @@ function RegisterForm({ values, touched, errors, handleChange, handleSubmit }) {
                 name={'password'}
             />
             <span> {errors.password} </span>
-
             <div>
                 <FormActionBtn label={'Üye Ol'} />
             </div>

@@ -4,7 +4,7 @@ import FormActionBtn from '../Fields/FormActionBtn'
 import styles from './Login.module.scss'
 
 
-function LoginForm({ values, touched, errors, handleChange, handleSubmit }) {
+function LoginForm({ values, errors, handleChange, handleSubmit }) {
 
     return (
         <form onSubmit={handleSubmit} >

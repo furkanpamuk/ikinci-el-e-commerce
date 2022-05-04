@@ -65,8 +65,11 @@
                         background-color: $input-background-color;
                         border-radius: 8px;
                     }
-
-
+                    .errInp {
+                        background-color: $error-light-color !important ;
+                        border: 1px solid $error-color;
+                        color: $error-color !important ;
+                    }
                 }
 
                 .forgotPw {

@@ -6,6 +6,7 @@ import LoginForm from './LoginForm'
 import * as yup from 'yup'
 
 
+
 function RightSide() {
 
     const defaultValues = {
@@ -43,13 +44,11 @@ function RightSide() {
                             {
                                 ({
                                     values,
-                                    touched,
                                     errors,
                                     handleChange,
                                     handleSubmit }) =>
                                     <LoginForm
                                         values={values}
-                                        touched={touched}
                                         errors={errors}
                                         handleChange={handleChange}
                                         handleSubmit={handleSubmit}

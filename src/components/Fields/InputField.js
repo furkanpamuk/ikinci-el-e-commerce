@@ -15,13 +15,12 @@ function InputField({
         <div className={styles.formControl} >
             <p className={styles.formLabel} >{label}</p>
             <input
-                className={`${errorStatus ? 'errInp' : ''}`}
+                className={`${errorStatus ? styles.errInp : ''}`}
                 type={inputType}
                 placeholder={placeholder}
                 value={value}
                 name={name}
                 onChange={handleChange}
-
             />
         </div>
     )

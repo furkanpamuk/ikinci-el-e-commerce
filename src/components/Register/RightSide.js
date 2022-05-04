@@ -1,8 +1,6 @@
 import React from 'react'
 import Logo from '../../constant/containers/logo/Logo'
 import styles from '../Login/Login.module.scss'
-import InputField from '../Fields/InputField'
-import FormActionBtn from '../Fields/FormActionBtn'
 import { useState } from 'react'
 import RegisterForm from './RegisterForm'
 import { Formik } from 'formik'
@@ -20,7 +18,9 @@ function RightSide() {
 
     const handleFormSubmit = (values, resetForm) => {
         setFormValues(values)
-        console.log(values);
+        setTimeout(() => {
+            resetForm();
+        }, 1000);
     }
 
     return (
@@ -38,7 +38,9 @@ function RightSide() {
                         <Formik
                             initialValues={formValues}
                             validationSchema={yup.object().shape({
-                                username: yup.string()
+                                username: yup
+                                    .string()
+                                    .email("E-Mail formatı uygun değildir!")
                                     .required('E-Mail alanı zorunludur!'),
                                 password: yup
                                     .string()
