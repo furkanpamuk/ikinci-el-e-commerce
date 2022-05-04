@@ -4,7 +4,7 @@ import styles from './Login.module.scss'
 import { Formik } from 'formik'
 import LoginForm from './LoginForm'
 import * as yup from 'yup'
-
+import { successLogin } from '../../utils/helpers/toastHelper'
 
 
 function RightSide() {
@@ -17,8 +17,9 @@ function RightSide() {
     const [formValues, setFormValues] = useState(defaultValues)
 
     const handleFormSubmit = (values, resetForm) => {
-        setFormValues(values)
+        setFormValues(values);
         console.log(values);
+        successLogin();
     }
 
     return (

@@ -16,11 +16,8 @@ cursor: pointer;
 
 const FormActionBtn = ({ label, onClick = null }) => {
 
-    const notify = () => {
-        toast("Giriş Başarılı!");
-    }
     return (
-        <Button onClick={notify} type='submit'>{label}</Button>
+        <Button type='submit'>{label}</Button>
     )
 }
 
