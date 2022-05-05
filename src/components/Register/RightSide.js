@@ -5,7 +5,7 @@ import { useState } from 'react'
 import RegisterForm from './RegisterForm'
 import { Formik } from 'formik'
 import * as yup from 'yup'
-
+import Link from 'next/link'
 
 function RightSide() {
 
@@ -69,7 +69,7 @@ function RightSide() {
                         </Formik>
                     </div>
                     <div className={styles.loginFooter}>
-                        <p>Hesabın var mı?  <span>Giriş Yap</span> </p>
+                        <p>Hesabın var mı?  <Link href={'login'}><span>Giriş Yap</span></Link> </p>
                     </div>
                 </div>
             </div>
