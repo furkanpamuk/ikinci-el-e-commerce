@@ -17,7 +17,7 @@ function Detail({ selectProduct }) {
                         <p><span>Renk:</span> {selectProduct.color} </p>
                         <p><span>Marka:</span> {selectProduct.status} </p>
                     </div>
-                    <h3>{selectProduct.price}</h3>
+                    <h3>{selectProduct.price} {process.env.currency}</h3>
                     <div>
                         <DetailBtn label={'Satın Al'} bgColor={'#4B9CE2'} labelColor={'#fff'} />
                         <DetailBtn label={'Teklif Ver'} bgColor={'#F0F8FF'} labelColor={'#4B9CE2'} />
