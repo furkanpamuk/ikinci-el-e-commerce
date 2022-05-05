@@ -3,9 +3,7 @@ import styles from './Categories.module.scss'
 import Container from '../../../constant/containers/Container'
 import CategoryItem from './CategoryItem'
 
-
-
-function Categories({ categories }) {
+function Categories({ categories, setSelectCategoryID }) {
 
   const [active, setActive] = useState(0)
 
@@ -14,24 +12,28 @@ function Categories({ categories }) {
   }, [categories])
 
 
+
   return (
     <div className={styles.categories} >
       <Container>
         <div className={styles.categoriesContent}  >
           <CategoryItem
-            handleActive={() => setActive(0)}
             isActive={active === 0}
+            index={-1}
             key={0}
-            category={{ 'name': 'Hepsi' }} />
+            category={{ 'name': 'Hepsi' }}
+            setActive={setActive}
+            setSelectCategoryID={setSelectCategoryID}
+          />
           {
-
-
             categories.map((category, index) =>
               <CategoryItem
                 isActive={active === index + 1}
+                index={index}
                 key={index + 1}
                 category={category}
-                handleActive={() => setActive(index + 1)}
+                setActive={setActive}
+                setSelectCategoryID={setSelectCategoryID}
               />
             )
           }
