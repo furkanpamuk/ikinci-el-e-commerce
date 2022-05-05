@@ -22,16 +22,13 @@ function RightSide() {
 
     const handleFormSubmit = async (values, resetForm) => {
         const username = values.email.split('@')[0]
-        console.log(username);
         const newValues = { ...values, username }
-        console.log(newValues);
         setFormValues(newValues)
         const result = await authRegister(newValues)
-        console.log(result);
         if (result.statusType) {
             setUser(result.data?.user)
             setIsLogin(true)
-            Router.push('/home')
+            Router.push('/')
         }
     }
 

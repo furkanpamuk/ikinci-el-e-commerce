@@ -7,10 +7,10 @@ const notify = ((type, message) => {
 const successType = 'success'
 const errorType = 'error'
 
-export const successLogin = (message) => {
+export const successMessage = (message) => {
     notify(successType, message)
 }
 
-export const errorLogin = (message) => {
+export const errorMessage = (message) => {
     notify(errorType, message)
 }

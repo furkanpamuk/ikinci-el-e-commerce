@@ -14,7 +14,9 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.headerContent}>
                 <div className={styles.logo} >
-                    <Image width={128} src={logo} alt='logo' />
+                    <Link href={'/'} >
+                        <Image width={128} src={logo} alt='logo' />
+                    </Link>
                 </div>
                 <div className={styles.rightContent}>
 
@@ -32,7 +34,7 @@ function Header() {
                             </>
                         )
                         : (
-                            <Link href='login'  >
+                            <Link href='/login'  >
                                 <div className={styles.account} >
                                     <FaUser /> Giriş Yap
                                 </div>

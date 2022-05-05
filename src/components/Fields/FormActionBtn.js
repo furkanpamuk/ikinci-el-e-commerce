@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { toast } from 'react-toastify'
 
 const Button = styled.button`
 padding: 10px 0;

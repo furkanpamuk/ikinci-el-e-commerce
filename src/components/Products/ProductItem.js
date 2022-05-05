@@ -1,10 +1,21 @@
 import React from 'react'
 import Img from 'next/image'
 import styles from './Products.module.scss'
+import { useProductsData } from '../../context/productsContext'
+import Router from 'next/router'
+import { stringHelper } from '../../utils/helpers/seoHelper'
 
-function ProductItemWrapper({ children }) {
+
+function ProductItemWrapper({ children, product }) {
+
+    const { setSelectProduct } = useProductsData()
+
+    const handleClick = (product) => {
+        setSelectProduct(product)
+        Router.push('detail/[product]', `detail/${stringHelper(product.name)}-${product.id}`)
+    }
     return (
-        <div className={styles.productBox}>
+        <div onClick={() => handleClick(product)} className={styles.productBox}>
             {children}
         </div>
     )
@@ -12,7 +23,7 @@ function ProductItemWrapper({ children }) {
 
 function ProductItem({ product }) {
     return (
-        <ProductItemWrapper>
+        <ProductItemWrapper product={product}>
             <Img width={260} height={297} key={product.id} src={`${process.env.baseURL}${product.image.formats.small.url}`} />
 
             <div className={styles.brandAndColor}>

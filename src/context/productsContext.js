@@ -2,12 +2,13 @@ import React, { useContext, createContext, useState } from "react";
 
 const ProductsContext = createContext();
 
-const ProductProvider = ({ children }) => {
+const ProductsProvider = ({ children }) => {
 
-    const [category, setCategory] = useState(0)
+    const [selectProduct, setSelectProduct] = useState([])
 
     const data = {
-
+        selectProduct,
+        setSelectProduct
     }
     return (
         <ProductsContext.Provider value={data}>
@@ -16,8 +17,8 @@ const ProductProvider = ({ children }) => {
     )
 }
 
-function useData() {
+function useProductsData() {
     return useContext(ProductsContext);
 }
 
-export { ProductProvider, ProductsContext, useData }
+export { ProductsProvider, ProductsContext, useProductsData }
