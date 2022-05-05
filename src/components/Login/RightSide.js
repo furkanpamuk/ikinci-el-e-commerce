@@ -7,6 +7,7 @@ import * as yup from 'yup'
 import { authLogin } from '../../services/authService'
 import { useUserData } from '../../context/userContext'
 import Router from 'next/router'
+import Link from 'next/link'
 
 function RightSide() {
 
@@ -65,7 +66,7 @@ function RightSide() {
                         </Formik>
                     </div>
                     <div className={styles.loginFooter}>
-                        <p>Hesabın yok mu? <span>Üye Ol</span> </p>
+                        <p>Hesabın yok mu? <Link href={'register'} ><span>Üye Ol</span></Link> </p>
                     </div>
                 </div>
             </div>
