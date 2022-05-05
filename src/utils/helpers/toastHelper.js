@@ -7,10 +7,10 @@ const notify = ((type, message) => {
 const successType = 'success'
 const errorType = 'error'
 
-export const successLogin = () => {
-    notify(successType, 'Giriş Başarılı')
+export const successLogin = (message) => {
+    notify(successType, message)
 }
 
-export const errorLogin = () => {
-    notify(errorType, 'Email veya Şifre Hatalıdır')
+export const errorLogin = (message) => {
+    notify(errorType, message)
 }

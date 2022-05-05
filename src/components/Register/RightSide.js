@@ -6,21 +6,33 @@ import RegisterForm from './RegisterForm'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import Link from 'next/link'
+import { authRegister } from '../../services/authService'
+import { useUserData } from '../../context/userContext'
+import Router from 'next/router'
 
 function RightSide() {
 
     const defaultValues = {
-        username: '',
+        email: '',
         password: ''
     }
 
     const [formValues, setFormValues] = useState(defaultValues)
+    const { setUser, setIsLogin } = useUserData();
 
-    const handleFormSubmit = (values, resetForm) => {
-        setFormValues(values)
-        setTimeout(() => {
-            resetForm();
-        }, 1000);
+    const handleFormSubmit = async (values, resetForm) => {
+        const username = values.email.split('@')[0]
+        console.log(username);
+        const newValues = { ...values, username }
+        console.log(newValues);
+        setFormValues(newValues)
+        const result = await authRegister(newValues)
+        console.log(result);
+        if (result.statusType) {
+            setUser(result.data?.user)
+            setIsLogin(true)
+            Router.push('/home')
+        }
     }
 
     return (
@@ -38,7 +50,7 @@ function RightSide() {
                         <Formik
                             initialValues={formValues}
                             validationSchema={yup.object().shape({
-                                username: yup
+                                email: yup
                                     .string()
                                     .email("E-Mail formatı uygun değildir!")
                                     .required('E-Mail alanı zorunludur!'),

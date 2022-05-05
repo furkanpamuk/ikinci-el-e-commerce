@@ -10,12 +10,12 @@ function RegisterForm({ values, errors, handleChange, handleSubmit }) {
                 label={'Email'}
                 inputType={'email'}
                 placeholder={'Lütfen emailiniz girin'}
-                value={values.username}
+                value={values.email}
                 handleChange={handleChange}
-                errorStatus={(errors.username) ? true : false}
-                name={'username'}
+                errorStatus={(errors.email) ? true : false}
+                name={'email'}
             />
-            <span> {errors.username} </span>
+            <span> {errors.email} </span>
             <InputField
                 label={'Şifre'}
                 inputType={'password'}

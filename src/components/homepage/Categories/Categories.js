@@ -38,10 +38,14 @@ function Categories({ categories, setSelectCategoryID }) {
             )
           }
           <CategoryItem
-            handleActive={() => setActive(categories.length + 1)}
             isActive={active === categories.length + 1}
-            key={categories.length + 1}
-            category={{ 'name': 'Diğer' }} />
+            index={categories.length + 1}
+            key={categories.length}
+            category={{ 'name': 'Diğer' }}
+            setActive={setActive}
+            setSelectCategoryID={setSelectCategoryID}
+          />
+
         </div>
       </Container>
 
