@@ -4,6 +4,7 @@ import logo from "../../assets/logo/logo.svg"
 import styles from './Header.module.scss'
 import Image from 'next/image';
 import { useUserData } from '../../context/userContext';
+import Link from 'next/link';
 
 function Header() {
 
@@ -17,23 +18,26 @@ function Header() {
                 </div>
                 <div className={styles.rightContent}>
 
-                    {isLogin ? (
-                        <>
-                            <div className={styles.addProduct} >
-                                {" "}
-                                <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
-                            </div>
-                            <div className={styles.account}>
-                                {" "}
-                                <FaUser /> Hesabım
-                            </div>
-                        </>
-                    ) : (
-                        <div className={styles.account} >
-                            {" "}
-                            <FaUser /> Giriş Yap
-                        </div>
-                    )}
+                    {isLogin
+                        ? (
+                            <>
+                                <div className={styles.addProduct} >
+                                    {" "}
+                                    <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
+                                </div>
+                                <div className={styles.account}>
+                                    {" "}
+                                    <FaUser /> Hesabım
+                                </div>
+                            </>
+                        )
+                        : (
+                            <Link href='login'  >
+                                <div className={styles.account} >
+                                    <FaUser /> Giriş Yap
+                                </div>
+                            </Link>
+                        )}
                 </div>
             </div>
         </header>
