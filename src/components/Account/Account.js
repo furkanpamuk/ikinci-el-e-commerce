@@ -4,7 +4,7 @@ import MainSection from './MainSection'
 import TopSection from './TopSection'
 import { useUserData } from '../../context/userContext'
 
-function MyAccount() {
+function Account() {
 
     const { user } = useUserData()
 
@@ -21,4 +21,4 @@ function MyAccount() {
 
 }
 
-export default MyAccount
+export default Account

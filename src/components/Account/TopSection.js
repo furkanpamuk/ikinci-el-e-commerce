@@ -1,7 +1,7 @@
 import React from 'react'
 import accountPng from '../../assets/images/account.png'
 import Image from 'next/image'
-import styles from './MyAccount.module.scss'
+import styles from './Account.module.scss'
 
 function TopSection({ user }) {
     console.log(user);

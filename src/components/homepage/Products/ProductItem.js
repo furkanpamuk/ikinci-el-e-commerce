@@ -1,9 +1,9 @@
 import React from 'react'
 import Img from 'next/image'
 import styles from './Products.module.scss'
-import { useProductsData } from '../../context/productsContext'
+import { useProductsData } from '../../../context/productsContext'
 import Router from 'next/router'
-import { stringHelper } from '../../utils/helpers/seoHelper'
+import { stringHelper } from '../../../utils/helpers/seoHelper'
 
 
 function ProductItemWrapper({ children, product }) {

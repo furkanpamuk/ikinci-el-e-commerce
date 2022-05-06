@@ -3,7 +3,7 @@ import { API } from '../services';
 import Layout from '../components/Layout/Layout';
 import Banner from '../components/homepage/Banner/Banner';
 import Categories from '../components/homepage/Categories/Categories';
-import Products from '../components/Products/Products';
+import Products from '../components/homepage/Products/Products';
 
 function Home({ products, categories }) {
 

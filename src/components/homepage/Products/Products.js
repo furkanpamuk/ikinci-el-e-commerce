@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../../constant/containers/Container'
+import Container from '../../../constant/containers/Container'
 import ProductItem from './ProductItem'
 import styles from './Products.module.scss'
 

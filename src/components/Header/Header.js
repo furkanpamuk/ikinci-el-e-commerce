@@ -34,7 +34,7 @@ function Header() {
                                     {" "}
                                     <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
                                 </div>
-                                <Link href={'myaccount'}>
+                                <Link href={'/account'}>
                                     <div className={styles.account}>
                                         {" "}
                                         <FaUser /> Hesabım
