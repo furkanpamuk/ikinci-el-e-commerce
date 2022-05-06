@@ -34,14 +34,16 @@ function Header() {
                                     {" "}
                                     <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
                                 </div>
-                                <div className={styles.account}>
-                                    {" "}
-                                    <FaUser /> Hesabım
-                                </div>
+                                <Link href={'myaccount'}>
+                                    <div className={styles.account}>
+                                        {" "}
+                                        <FaUser /> Hesabım
+                                    </div>
+                                </Link>
                             </>
                         )
                         : (
-                            <Link href='/login'  >
+                            <Link href='/login'>
                                 <div className={styles.account} >
                                     <FaUser /> Giriş Yap
                                 </div>
