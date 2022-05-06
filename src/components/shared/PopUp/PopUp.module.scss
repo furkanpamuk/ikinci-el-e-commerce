@@ -1,0 +1,24 @@
+@import '../../../styles/mixins';
+
+.popup {
+    background-color: $primary-color;
+    opacity: 0.4;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .box {
+        background-color: red;
+        padding: 30px;
+        z-index: 10000;
+        opacity: 1;
+        div > button {
+            background-color: blue;
+            margin-left: 10px;
+            width: 100px;
+            height: 40px;
+            color: black;
+        }
+    }
+}

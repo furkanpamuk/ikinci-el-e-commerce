@@ -14,7 +14,6 @@ function Home({ products, categories }) {
     if (selectCategoryID) {
       const selectedCategory = categories.filter(item => item.id === selectCategoryID)
       setSelectProducts(selectedCategory[0].products)
-      // console.log(selectProducts);
     }
     else {
       setSelectProducts(products)

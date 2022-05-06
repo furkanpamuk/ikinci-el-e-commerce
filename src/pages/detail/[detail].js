@@ -6,8 +6,9 @@ import { getProductById } from '../../services/productService'
 function Detail({ product }) {
     return (
         <>
-            <Layout />
-            <DetailComp selectProduct={product} />
+            <Layout>
+                <DetailComp selectProduct={product} />
+            </Layout>
         </>
     )
 }

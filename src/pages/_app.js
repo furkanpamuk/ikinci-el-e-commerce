@@ -3,9 +3,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { UserProvider, useUserData } from '../context/userContext'
 import { ProductsProvider } from '../context/productsContext'
-import { useEffect } from 'react'
-import { getCookies } from 'cookies-next'
-
 
 function MyApp({ Component, pageProps }) {
 
@@ -26,8 +23,6 @@ function MyApp({ Component, pageProps }) {
       </ProductsProvider>
     </UserProvider>
   )
-
-
 }
 
 export default MyApp
