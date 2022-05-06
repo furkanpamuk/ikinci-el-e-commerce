@@ -13,9 +13,22 @@ function Detail({ selectProduct }) {
                 <div className={styles.productDetail} >
                     <h1> {selectProduct.name} </h1>
                     <div className={styles.moreInf} >
-                        <p><span>Marka:</span> {selectProduct.brand} </p>
-                        <p><span>Renk:</span> {selectProduct.color} </p>
-                        <p><span>Marka:</span> {selectProduct.status} </p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Marka:</td>
+                                    <td>{selectProduct.brand}</td>
+                                </tr>
+                                <tr>
+                                    <td>Renk:</td>
+                                    <td>{selectProduct.color}</td>
+                                </tr>
+                                <tr>
+                                    <td>Durumu:</td>
+                                    <td>{selectProduct.status}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <h3>{selectProduct.price} {process.env.currency}</h3>
                     <div>

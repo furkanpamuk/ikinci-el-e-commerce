@@ -1,11 +1,14 @@
 import '../styles/globals.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
-import { UserProvider } from '../context/userContext'
+import { UserProvider, useUserData } from '../context/userContext'
 import { ProductsProvider } from '../context/productsContext'
+import { useEffect } from 'react'
+import { getCookies } from 'cookies-next'
 
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <UserProvider>
       <ProductsProvider>

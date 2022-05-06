@@ -19,6 +19,7 @@ function Home({ products, categories }) {
     else {
       setSelectProducts(products)
     }
+
   }, [selectCategoryID])
 
   return (
