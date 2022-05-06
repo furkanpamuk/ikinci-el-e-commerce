@@ -10,12 +10,12 @@ const baseUrl = publicRuntimeConfig.baseURL;
 
 axios.defaults.baseURL = baseUrl;
 
-const _get = (endpoint) => {
-    return axios.get(endpoint).then(handleResponse)
+const _get = (endpoint, token = null) => {
+    return axios.get(endpoint, getHeader(null, token)).then(handleResponse)
 }
 
-const _post = (endpoint, data, contentType = "application/json") => {
-    return axios.post(endpoint, data, getHeader(contentType)).then(handleResponse).catch(error => {
+const _post = (endpoint, data, contentType = "application/json", token = null) => {
+    return axios.post(endpoint, data, getHeader(contentType, token)).then(handleResponse).catch(error => {
         return handleResponse(error.response)
     })
 }
@@ -45,16 +45,22 @@ const result = (statusType, data) => {
     }
 }
 
-const getHeader = (contentType) => {
-    const token = getCookie('token'); // Token çekildi
+const getHeader = (contentType = "application/json", token = null) => {
+    if (!token) {
+        token = getCookie('token')
+    }
     if (token) {
         return {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': contentType
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': contentType
+            }
         }
     } else {
         return {
-            'Content-Type': contentType
+            headers: {
+                'Content-Type': contentType
+            }
         }
     }
 }

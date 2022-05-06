@@ -11,7 +11,7 @@ function PopUp({ setShowPopup }) {
 
     return (
         <div className={styles.popup} >
-            <div onClick={(e) => e.stopPropagation()} className={styles.box} >
+            <div onClick={(e) => e.stopPropagation(setShowPopup(false))} className={styles.box} >
                 <h1>Satın Al</h1>
                 <p>Satın Almak istiyor musunuz?</p>
                 <div>

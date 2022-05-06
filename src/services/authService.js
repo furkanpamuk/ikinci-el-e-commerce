@@ -7,6 +7,7 @@ export const authLogin = (data) => {
     return API.post('auth/local', data).then(res => {
         if (res.statusType) {
             setCookies('token', res.data.jwt);
+            setCookies('userId', res.data.user.id)
             successMessage('Giriş Başarılı');
         }
         else {
@@ -20,6 +21,7 @@ export const authRegister = (data) => {
     return API.post('auth/local/register', data).then(res => {
         if (res.statusType) {
             setCookies('token', res.data.jwt);
+            setCookies('userId', res.data.user.id)
             successMessage('Kayıt Başarılı');
         }
         else {

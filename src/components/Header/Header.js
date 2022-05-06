@@ -26,7 +26,6 @@ function Header() {
                     </Link>
                 </div>
                 <div className={styles.rightContent}>
-
                     {isLogin
                         ? (
                             <>
