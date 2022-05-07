@@ -11,8 +11,6 @@ function Categories({ categories, setSelectCategoryID }) {
 
   }, [categories])
 
-
-
   return (
     <div className={styles.categories} >
       <Container>
@@ -45,14 +43,10 @@ function Categories({ categories, setSelectCategoryID }) {
             setActive={setActive}
             setSelectCategoryID={setSelectCategoryID}
           />
-
         </div>
       </Container>
-
-
     </div>
   )
 }
-
 
 export default Categories

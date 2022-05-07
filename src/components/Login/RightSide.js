@@ -26,7 +26,7 @@ function RightSide() {
         if (result.statusType) {
             setUser(result.data?.user)
             setIsLogin(true)
-            // Router.push('/')
+            Router.push('/')
         }
     }
 

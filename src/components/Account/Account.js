@@ -7,6 +7,7 @@ import { useUserData } from '../../context/userContext'
 function Account() {
 
     const { user } = useUserData()
+    console.log(user);
 
     useEffect(() => {
 
