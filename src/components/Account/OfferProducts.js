@@ -4,6 +4,7 @@ import styles from './Account.module.scss'
 
 function OfferProducts({ userOffers }) {
     return (
+
         <div className={styles.products}>
             {
                 userOffers.map(product => (
