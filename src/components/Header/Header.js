@@ -29,10 +29,12 @@ function Header() {
                     {isLogin
                         ? (
                             <>
-                                <div className={styles.addProduct} >
-                                    {" "}
-                                    <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
-                                </div>
+                                <Link href={'/uploadproduct'}>
+                                    <div className={styles.addProduct} >
+                                        {" "}
+                                        <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
+                                    </div>
+                                </Link>
                                 <Link href={'/account'}>
                                     <div className={styles.account}>
                                         {" "}
