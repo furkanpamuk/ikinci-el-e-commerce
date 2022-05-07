@@ -10,12 +10,12 @@ const baseUrl = publicRuntimeConfig.baseURL;
 
 axios.defaults.baseURL = baseUrl;
 
-const _get = (endpoint, token = null) => {
-    return axios.get(endpoint, getHeader(null, token)).then(handleResponse)
+const _get = (endpoint, hasToken = true, token = null) => {
+    return axios.get(endpoint, getHeader(null, hasToken, token)).then(handleResponse)
 }
 
-const _post = (endpoint, data, contentType = "application/json", token = null) => {
-    return axios.post(endpoint, data, getHeader(contentType, token)).then(handleResponse).catch(error => {
+const _post = (endpoint, data, contentType, hasToken = true, token = null) => {
+    return axios.post(endpoint, data, getHeader(contentType, hasToken, token)).then(handleResponse).catch(error => {
         return handleResponse(error.response)
     })
 }
@@ -45,11 +45,14 @@ const result = (statusType, data) => {
     }
 }
 
-const getHeader = (contentType = "application/json", token = null) => {
+const getHeader = (contentType, hasToken = true, token = null) => {
+    if (!contentType) {
+        contentType = "application/json";
+    }
     if (!token) {
         token = getCookie('token')
     }
-    if (token) {
+    if (token && hasToken) {
         return {
             headers: {
                 'Authorization': `Bearer ${token}`,

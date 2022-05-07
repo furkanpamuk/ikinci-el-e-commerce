@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Account.module.scss'
 
-function SelectPanel() {
+function SelectPanel({ isActive, setIsActive }) {
 
-    const [isActive, setIsActive] = useState(0)
 
     return (
         <div className={styles.selectProductsList}>

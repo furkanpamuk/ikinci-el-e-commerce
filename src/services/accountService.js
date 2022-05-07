@@ -9,7 +9,7 @@ export const getUserProducts = (userId) => {
 }
 
 export const getUserOffers = (userId, token) => {
-    return API.get(`offers?users_permissions_user=${userId}`, token).then(res => {
+    return API.get(`offers?users_permissions_user=${userId}`, true, token).then(res => {
         return res
     })
 }

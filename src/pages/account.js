@@ -5,11 +5,11 @@ import { getUserProducts, getUserOffers } from '../services/accountService'
 import { getCookie } from 'cookies-next';
 import * as cookie from 'cookie'
 
-function Account() {
+function Account({ userProducts, userOffers }) {
 
     return (
         <Layout>
-            <AccountComp />
+            <AccountComp userOffers={userOffers} userProducts={userProducts} />
         </Layout>
     )
 }
@@ -20,7 +20,6 @@ export async function getServerSideProps(context) {
     const { userId, token } = cookie.parse(cookies)
     const userProducts = await getUserProducts(userId)
     const userOffers = await getUserOffers(userId, token)
-    console.log(userOffers);
     return {
         props: {
             userProducts: userProducts.data,

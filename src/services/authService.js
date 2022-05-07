@@ -4,10 +4,11 @@ import { setCookies } from 'cookies-next'
 
 export const authLogin = (data) => {
 
-    return API.post('auth/local', data).then(res => {
+    return API.post('auth/local', data, null, false).then(res => {
         if (res.statusType) {
             setCookies('token', res.data.jwt);
             setCookies('userId', res.data.user.id)
+            setCookies('user', res.data.user)
             successMessage('Giriş Başarılı');
         }
         else {
@@ -18,10 +19,11 @@ export const authLogin = (data) => {
 }
 
 export const authRegister = (data) => {
-    return API.post('auth/local/register', data).then(res => {
+    return API.post('auth/local/register', data, null, false).then(res => {
         if (res.statusType) {
             setCookies('token', res.data.jwt);
             setCookies('userId', res.data.user.id)
+            setCookies('user', res.data.user)
             successMessage('Kayıt Başarılı');
         }
         else {
