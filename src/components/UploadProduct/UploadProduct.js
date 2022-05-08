@@ -8,12 +8,10 @@ import { addProductSchema } from '../../constant/schemas/addProductSchema'
 import uploadImg from '../../assets/images/upload.png'
 import Image from 'next/image'
 import { successMessage, errorMessage } from '../../utils/helpers/toastHelper'
-
-import { useDropzone } from "react-dropzone";
 import { useCallback } from "react";
 import { FaTimesCircle } from "react-icons/fa";
-import { addNewProduct } from '../../services/productService'
-
+import { addNewProduct } from '../../services/productService';
+import { useDropzone } from "react-dropzone";
 
 function UploadProduct({ colorList, categoryList, brandList, statusList }) {
     const defaultValues = {
