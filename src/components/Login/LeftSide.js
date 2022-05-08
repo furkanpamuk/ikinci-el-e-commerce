@@ -7,7 +7,7 @@ function LeftSide() {
 
     return (
         <div className={styles.loginpic} >
-            <Image width='100%' height='100%' layout='fill' alt='' src={loginPic} />
+            <Image placeholder='blur' width='100%' height='100%' layout='fill' alt='' src={loginPic} />
         </div>
     )
 }
