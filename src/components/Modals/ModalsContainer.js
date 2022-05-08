@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import BuyModal from './BuyModal'
 import styles from './Modal.module.scss'
+import OffersModal from './OffersModal'
 function ModalsContainer() {
 
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(true)
+    const [modaltype, setModaltype] = useState(2)
 
     return (
         <>
@@ -12,7 +15,9 @@ function ModalsContainer() {
                     <div className={styles.modalWrap}>
                         <div onClick={() => setShowModal(false)} className={styles.modalBg}></div>
                         <div className={styles.modalBody}>
-                            hello
+                            {
+                                modaltype === 1 ? <BuyModal /> : <OffersModal />
+                            }
                         </div>
                     </div>
                 </div>

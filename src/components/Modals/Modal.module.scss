@@ -1,3 +1,4 @@
+@import '../../styles/mixins';
 
 .modalContainer {
     position: fixed;
@@ -15,15 +16,51 @@
         .modalBg{
             position: absolute;
             inset: 0;
-            background-color: lightblue;
+            background-color: $primary-color;
+            opacity: 0.7;
             z-index: 100000;
         }
         .modalBody{
             left: 50%;
             top: 50%;
+            transform: translate(-50%,-50%);
             position: absolute;
             z-index: 110000;
-            background-color: red;
+            background-color: $background-light-color;
+            border-radius: 8px;
+            .buyModal {
+                padding: 20px;
+                text-align: center;
+                h2{
+                    font-size: 25px;
+                    color: $text-light-color;
+                    margin-bottom: 12px;
+                }
+                p{
+                    font-size: 15px;
+                    color: $detail-text-color;
+                    margin-bottom: 20px;
+                }
+                .buttonsArea {
+                    button {
+                        padding: 11px 42px;
+                        border-radius: 8px;
+                        font-size: 18px;
+                    }
+                    :first-child {
+                        background-color: $button-light-color;
+                        color: $primary-color;
+                        margin-right: 10px ;
+                    }
+                    :last-child{
+                        background-color: $primary-color;
+                        color: $background-light-color;
+                    }
+                }
+            }
+            .offersModal {
+                
+            }
         }
     }
 }
