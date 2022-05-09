@@ -4,9 +4,9 @@ import styles from './Modal.module.scss'
 import OffersModal from './OffersModal'
 
 
-function ModalsContainer() {
+function ModalsComp() {
 
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(true)
     const [modaltype, setModaltype] = useState(2)
 
     return (
@@ -28,4 +28,4 @@ function ModalsContainer() {
     )
 }
 
-export default ModalsContainer
+export default ModalsComp

@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { UserProvider, useUserData } from '../context/userContext'
 import { ProductsProvider } from '../context/productsContext'
-import ModalsContainer from '../components/Modals/ModalsContainer'
+import ModalsComp from '../components/Modals/ModalsComp'
 
 function MyApp({ Component, pageProps }) {
 
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
           closeOnClick
           pauseOnHover
         />
-        <ModalsContainer />
+        <ModalsComp />
       </ProductsProvider>
     </UserProvider>
   )

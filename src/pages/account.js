@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout/Layout'
 import AccountComp from '../components/Account/Account'
 import { getUserProducts, getUserOffers } from '../services/accountService'
 import * as cookie from 'cookie'
 import Head from 'next/head'
+import { useUserData } from '../context/userContext'
+import Router from 'next/router'
 
 function Account({ userProducts, userOffers }) {
+
+    const { isLogin } = useUserData();
+
+    useEffect(() => {
+        if (!isLogin) {
+            Router.push('/login')
+        }
+    }, [isLogin])
 
     return (
         <Layout>
