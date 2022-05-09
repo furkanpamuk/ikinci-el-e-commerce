@@ -6,7 +6,7 @@ import OffersModal from './OffersModal'
 
 function ModalsComp() {
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
     const [modaltype, setModaltype] = useState(2)
 
     return (
