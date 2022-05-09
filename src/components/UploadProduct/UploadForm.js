@@ -15,17 +15,19 @@ function UploadForm({ values, errors, handleChange, handleSubmit, colorList, cat
                     name='name'
                     onChange={handleChange}
                 />
+                <span>{errors.name}</span>
             </div>
             <div className={styles.formControl}>
                 <p className={styles.formLabel} >Açıklama</p>
                 <textarea
-                    className={`${errors.name ? styles.errInp : ''}`}
+                    className={`${errors.description ? styles.errInp : ''}`}
                     name="description"
                     rows="3"
                     placeholder={'Ürün açıklaması girin'}
                     value={values.description}
                     onChange={handleChange}
                 ></textarea>
+                <span>{errors.description}</span>
             </div>
             <div className={styles.selectArea} >
                 <div className={styles.selectField}>
