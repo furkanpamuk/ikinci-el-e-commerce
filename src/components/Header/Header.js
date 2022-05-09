@@ -5,14 +5,14 @@ import styles from './Header.module.scss'
 import Image from 'next/image';
 import { useUserData } from '../../context/userContext';
 import Link from 'next/link';
-import { getCookies } from 'cookies-next';
+import { getCookie } from 'cookies-next';
 
 function Header() {
 
     const { isLogin, setIsLogin } = useUserData();
 
     useEffect(() => {
-        if (getCookies('token')) {
+        if (getCookie('token')) {
             setIsLogin(true)
         }
         else {
