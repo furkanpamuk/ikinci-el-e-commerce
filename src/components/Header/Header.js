@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { FaPlus, FaUser } from "react-icons/fa";
 import logo from "../../assets/logo/logo.svg"
 import styles from './Header.module.scss'
