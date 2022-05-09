@@ -1,6 +1,6 @@
 ### :zap: Live
 
-###[İkinci El](https://ikinci-el-e-ticaret.vercel.app/)
+### [İkinci El](https://ikinci-el-e-ticaret.vercel.app/)
 
 # İkinci El Project [tr]
 
