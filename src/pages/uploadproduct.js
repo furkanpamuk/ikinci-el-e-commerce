@@ -7,6 +7,7 @@ import * as cookie from 'cookie'
 
 
 function Uploadproduct({ colorList, categoryList, brandList, statusList }) {
+
     return (
         <Layout>
             <Head>
