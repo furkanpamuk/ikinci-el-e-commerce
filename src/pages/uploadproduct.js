@@ -1,12 +1,17 @@
 import React from 'react'
+import Head from 'next/head'
 import Layout from '../components/Layout/Layout'
 import UploadProductComp from '../components/UploadProduct/UploadProduct'
 import { getColorList, getBrandList, getStatusList, getCategoryList } from '../services/productService'
 import * as cookie from 'cookie'
 
+
 function Uploadproduct({ colorList, categoryList, brandList, statusList }) {
     return (
         <Layout>
+            <Head>
+                <title>Ürün Ekle</title>
+            </Head>
             <UploadProductComp
                 colorList={colorList}
                 categoryList={categoryList}
@@ -21,12 +26,10 @@ export async function getServerSideProps(context) {
 
     const cookies = context.req.headers.cookie
     const { userId, token } = cookie.parse(cookies)
-
     const colorList = await getColorList()
     const categoryList = await getCategoryList()
     const brandList = await getBrandList()
     const statusList = await getStatusList()
-
 
     return {
         props: {

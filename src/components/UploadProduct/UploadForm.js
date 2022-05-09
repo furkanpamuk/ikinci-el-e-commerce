@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './UploadProduct.module.scss'
 
+
 function UploadForm({ values, errors, handleChange, handleSubmit, colorList, categoryList, brandList, statusList }) {
     return (
         <form onSubmit={handleSubmit}>

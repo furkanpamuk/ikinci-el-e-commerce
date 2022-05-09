@@ -8,7 +8,6 @@ function MainSection({ userProducts, userOffers }) {
 
     const [isActive, setIsActive] = useState(1)
 
-
     return (
         <div className={styles.mainSection}>
             <SelectPanel isActive={isActive} setIsActive={setIsActive} />

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Modal.module.scss'
 
+
 function BuyModal() {
     return (
         <div className={styles.buyModal}>

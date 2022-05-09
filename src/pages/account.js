@@ -1,14 +1,17 @@
 import React from 'react'
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout/Layout'
 import AccountComp from '../components/Account/Account'
 import { getUserProducts, getUserOffers } from '../services/accountService'
-import { getCookie } from 'cookies-next';
 import * as cookie from 'cookie'
+import Head from 'next/head'
 
 function Account({ userProducts, userOffers }) {
 
     return (
         <Layout>
+            <Head>
+                <title>Hesabım</title>
+            </Head>
             <AccountComp userOffers={userOffers} userProducts={userProducts} />
         </Layout>
     )

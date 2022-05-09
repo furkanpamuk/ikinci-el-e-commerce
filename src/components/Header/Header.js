@@ -32,7 +32,8 @@ function Header() {
                             <>
                                 <Link href={'/uploadproduct'}>
                                     <div className={styles.addProduct} >
-                                        <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
+                                        <FaPlus />
+                                        <div className={styles.addProductButton}> Ürün Ekle </div>
                                     </div>
                                 </Link>
                                 <Link href={'/account'}>

@@ -3,9 +3,8 @@ import OfferProduct from './OfferProduct'
 import styles from './Account.module.scss'
 
 function OfferProducts({ userOffers }) {
-    console.log('it is', userOffers);
-    return (
 
+    return (
         <div className={styles.products}>
             {
                 userOffers.map(product => (

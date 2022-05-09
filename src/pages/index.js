@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { API } from '../services';
-import Layout from '../components/Layout/Layout';
-import Banner from '../components/homepage/Banner/Banner';
-import Categories from '../components/homepage/Categories/Categories';
-import Products from '../components/homepage/Products/Products';
+import Head from 'next/head'
+import { API } from '../services'
+import Layout from '../components/Layout/Layout'
+import Banner from '../components/homepage/Banner/Banner'
+import Categories from '../components/homepage/Categories/Categories'
+import Products from '../components/homepage/Products/Products'
 
 function Home({ products, categories }) {
 
@@ -23,6 +24,9 @@ function Home({ products, categories }) {
 
   return (
     <Layout>
+      <Head>
+        <title>Ana Sayfa</title>
+      </Head>
       <Banner />
       <Categories setSelectCategoryID={setSelectCategoryID} categories={categories} />
       <Products products=
@@ -34,8 +38,6 @@ function Home({ products, categories }) {
 export async function getStaticProps() {
   const categories = await API.get('categories')
   const products = await API.get('/products')
-
-
 
   return {
     props: {

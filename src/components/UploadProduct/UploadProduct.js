@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import Container from '../../constant/containers/Container'
 import UploadForm from './UploadForm'
 import styles from './UploadProduct.module.scss'
@@ -8,10 +8,10 @@ import { addProductSchema } from '../../constant/schemas/addProductSchema'
 import uploadImg from '../../assets/images/upload.png'
 import Image from 'next/image'
 import { successMessage, errorMessage } from '../../utils/helpers/toastHelper'
-import { useCallback } from "react";
-import { FaTimesCircle } from "react-icons/fa";
-import { addNewProduct } from '../../services/productService';
-import { useDropzone } from "react-dropzone";
+import { FaTimesCircle } from "react-icons/fa"
+import { addNewProduct } from '../../services/productService'
+import { useDropzone } from "react-dropzone"
+
 
 function UploadProduct({ colorList, categoryList, brandList, statusList }) {
     const defaultValues = {
@@ -30,12 +30,12 @@ function UploadProduct({ colorList, categoryList, brandList, statusList }) {
     const [formValues, setFormValues] = useState(defaultValues)
 
     const [uploadSuccess, setUploadSuccess] = useState(false)
-    const [myFiles, setMyFiles] = useState([]);
+    const [myFiles, setMyFiles] = useState([])
 
 
     const removeImage = () => {
 
-        setMyFiles([]);
+        setMyFiles([])
     };
     const onDrop = useCallback(
         (acceptedFiles) => {
@@ -47,7 +47,7 @@ function UploadProduct({ colorList, categoryList, brandList, statusList }) {
         onDrop,
         accept: "image/jpeg, image/jpg, image/png",
         maxFiles: 1,
-        maxSize: 409600,
+        maxSize: 400000,
     });
 
 

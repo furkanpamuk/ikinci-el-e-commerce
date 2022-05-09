@@ -1,9 +1,15 @@
 import React from 'react'
 import RegisterComp from '../components/Register/Register'
+import Head from 'next/head'
 
 function Register() {
     return (
-        <RegisterComp />
+        <>
+            <Head>
+                <title>Üye Ol</title>
+            </Head>
+            <RegisterComp />
+        </>
     )
 }
 

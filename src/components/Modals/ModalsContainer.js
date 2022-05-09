@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import BuyModal from './BuyModal'
 import styles from './Modal.module.scss'
 import OffersModal from './OffersModal'
+
+
 function ModalsContainer() {
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
     const [modaltype, setModaltype] = useState(2)
 
     return (

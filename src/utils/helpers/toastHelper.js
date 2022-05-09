@@ -1,7 +1,7 @@
 import toast from "../../components/toast/Toast"
 
 const notify = ((type, message) => {
-    toast({ type, message });
+    toast({ type, message })
 });
 
 const successType = 'success'

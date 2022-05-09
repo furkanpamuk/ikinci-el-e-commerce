@@ -1,7 +1,7 @@
-import { getCookie } from "cookies-next";
-import React, { useContext, createContext, useState, useEffect } from "react";
+import { getCookie } from "cookies-next"
+import React, { useContext, createContext, useState, useEffect } from "react"
 
-const userContext = createContext();
+const userContext = createContext()
 
 const UserProvider = ({ children }) => {
 
@@ -30,7 +30,7 @@ const UserProvider = ({ children }) => {
 }
 
 function useUserData() {
-    return useContext(userContext);
+    return useContext(userContext)
 }
 
 export { UserProvider, userContext, useUserData }

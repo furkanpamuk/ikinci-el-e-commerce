@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from 'axios'
 import { statusCode } from '../utils/helpers/HttpsStatus'
-import getConfig from 'next/config';
-import { getCookie } from 'cookies-next';
+import getConfig from 'next/config'
+import { getCookie } from 'cookies-next'
 
 
-const { publicRuntimeConfig } = getConfig();
+const { publicRuntimeConfig } = getConfig()
 
-const baseUrl = publicRuntimeConfig.baseURL;
+const baseUrl = publicRuntimeConfig.baseURL
 
-axios.defaults.baseURL = baseUrl;
+axios.defaults.baseURL = baseUrl
 
 const _get = (endpoint, hasToken = true, token = null) => {
     return axios.get(endpoint, getHeader(null, hasToken, token)).then(handleResponse)
@@ -21,7 +21,7 @@ const _post = (endpoint, data, contentType, hasToken = true, token = null) => {
 }
 
 const handleResponse = (response) => {
-    const data = response.data;
+    const data = response.data
 
     switch (response.status) {
         case statusCode.forbidden:
@@ -47,7 +47,7 @@ const result = (statusType, data) => {
 
 const getHeader = (contentType, hasToken = true, token = null) => {
     if (!contentType) {
-        contentType = "application/json";
+        contentType = "application/json"
     }
     if (!token) {
         token = getCookie('token')

@@ -7,8 +7,6 @@ import { useUserData } from '../../context/userContext'
 function TopSection() {
 
     const { user } = useUserData()
-    console.log(user);
-
     useEffect(() => {
 
     }, [user])

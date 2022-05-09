@@ -1,3 +1,5 @@
+
+// changed characters for url 
 export const stringHelper = (value = '') => {
     let result = value
     result = result.toLowerCase().trim().replace(/ /gim, '-')

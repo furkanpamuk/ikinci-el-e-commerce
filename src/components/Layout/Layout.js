@@ -6,9 +6,6 @@ import Head from 'next/head'
 function Layout({ children }) {
   return (
     <>
-      <Head>
-        <title>ikinci El</title>
-      </Head>
       <Header />
       {children}
     </>

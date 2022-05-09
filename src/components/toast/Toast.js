@@ -1,19 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { toast } from "react-toastify";
-import {
-    FaCheck,
-    FaExclamationCircle
-} from "react-icons/fa";
+import React from "react"
+import PropTypes from "prop-types"
+import { toast } from "react-toastify"
+import { FaCheck, FaExclamationCircle } from "react-icons/fa"
+
 
 export const displayIcon = (type) => {
     switch (type) {
         case "success":
-            return <FaCheck />;
+            return <FaCheck />
         case "error":
-            return <FaExclamationCircle />;
+            return <FaExclamationCircle />
     }
-};
+}
 
 const ToastMessage = ({ type, message }) =>
     toast[type](
@@ -22,13 +20,13 @@ const ToastMessage = ({ type, message }) =>
                 {message}
             </div>
         </div>
-    );
+    )
 
 ToastMessage.propTypes = {
     message: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
-};
+}
 
-ToastMessage.dismiss = toast.dismiss;
+ToastMessage.dismiss = toast.dismiss
 
-export default ToastMessage;
+export default ToastMessage

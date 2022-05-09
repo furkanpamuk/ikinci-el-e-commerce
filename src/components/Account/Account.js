@@ -11,7 +11,6 @@ function Account({ userProducts, userOffers }) {
             <MainSection userProducts={userProducts} userOffers={userOffers} />
         </Container>
     )
-
 }
 
 export default Account

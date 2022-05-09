@@ -1,6 +1,6 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState } from "react"
 
-const ProductsContext = createContext();
+const ProductsContext = createContext()
 
 const ProductsProvider = ({ children }) => {
 
