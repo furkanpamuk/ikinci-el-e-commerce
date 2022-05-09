@@ -5,9 +5,11 @@ import Layout from '../components/Layout/Layout'
 import Banner from '../components/homepage/Banner/Banner'
 import Categories from '../components/homepage/Categories/Categories'
 import Products from '../components/homepage/Products/Products'
+import { useUserData } from '../context/userContext'
 
 function Home({ products, categories }) {
 
+  const { isLogin, setIsLogin } = useUserData();
   const [selectCategoryID, setSelectCategoryID] = useState()
   const [selectProducts, setSelectProducts] = useState(products)
 
@@ -26,6 +28,7 @@ function Home({ products, categories }) {
     <Layout>
       <Head>
         <title>Ana Sayfa</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Banner />
       <Categories setSelectCategoryID={setSelectCategoryID} categories={categories} />

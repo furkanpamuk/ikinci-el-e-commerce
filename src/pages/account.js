@@ -11,6 +11,7 @@ function Account({ userProducts, userOffers }) {
         <Layout>
             <Head>
                 <title>Hesabım</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <AccountComp userOffers={userOffers} userProducts={userProducts} />
         </Layout>

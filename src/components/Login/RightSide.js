@@ -19,7 +19,7 @@ function RightSide() {
     const [formValues, setFormValues] = useState(defaultValues)
     const { setUser, setIsLogin } = useUserData();
 
-    const handleFormSubmit = async (values, resetForm) => {
+    const handleFormSubmit = async (values) => {
         setFormValues(values);
         const result = await authLogin(values)
         console.log(result);
@@ -48,7 +48,7 @@ function RightSide() {
                                 identifier: yup.string().required(),
                                 password: yup.string().required()
                             })}
-                            onSubmit={(values, { resetForm }) => handleFormSubmit(values, resetForm)}
+                            onSubmit={(values) => handleFormSubmit(values)}
                         >
                             {
                                 ({

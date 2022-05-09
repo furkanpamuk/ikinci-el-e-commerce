@@ -8,6 +8,7 @@ function Login() {
         <>
             <Head>
                 <title>Giriş Yap</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <LoginComp />
         </>

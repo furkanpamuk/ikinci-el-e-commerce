@@ -11,6 +11,7 @@ function Uploadproduct({ colorList, categoryList, brandList, statusList }) {
         <Layout>
             <Head>
                 <title>Ürün Ekle</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <UploadProductComp
                 colorList={colorList}
