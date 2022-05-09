@@ -15,6 +15,9 @@ function Header() {
         if (getCookies('token')) {
             setIsLogin(true)
         }
+        else {
+            setIsLogin(false)
+        }
     }, [isLogin])
 
     return (

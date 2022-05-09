@@ -80,18 +80,23 @@
             }
             .buttons {
                 display: flex;
+                align-items: center;
                 gap: 10px;
                 button{
                     border-radius: 8px;
                     padding: 5px 20px;
                     color: $background-light-color;
-                    cursor: pointer;
+                    cursor: pointer; 
                 }     
                 .acceptBtn{
                     background-color: $primary-color;
                 }
                 .rejectBtn {
                     background-color: $error-color;
+                }
+                div {
+                    color: $primary-color;
+                    font-size: 15px;
                 }
             }
         }

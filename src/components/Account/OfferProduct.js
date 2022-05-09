@@ -15,7 +15,7 @@ function OfferProduct({ product, offerPrice }) {
             </div>
             <div className={styles.buttons} >
                 <button className={styles.acceptBtn} >Satın Al</button>
-                <button className={styles.rejectBtn} >Onaylandı</button>
+                <div>Onaylandı</div>
             </div>
         </div>
     )

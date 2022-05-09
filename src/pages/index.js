@@ -31,7 +31,7 @@ function Home({ products, categories }) {
       <Categories setSelectCategoryID={setSelectCategoryID} categories={categories} />
       <Products products=
         {
-          selectProducts.filter(item => item.image !== null && item.image.formats.small?.url)} />
+          selectProducts.filter(item => item.image !== null && item.image.formats?.small?.url)} />
     </Layout>
   )
 }
