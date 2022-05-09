@@ -27,17 +27,16 @@ function Header() {
                 </div>
                 <div className={styles.rightContent}>
                     {isLogin
-                        ? (
+                        ?
+                        (
                             <>
                                 <Link href={'/uploadproduct'}>
                                     <div className={styles.addProduct} >
-                                        {" "}
                                         <FaPlus /> <div className={styles.addProductButton}> Ürün Ekle </div>
                                     </div>
                                 </Link>
                                 <Link href={'/account'}>
                                     <div className={styles.account}>
-                                        {" "}
                                         <FaUser /> Hesabım
                                     </div>
                                 </Link>

@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from './Modal.module.scss'
 import Image from 'next/image'
-
 import silinecekPng from '../../assets/images/silinecek.png'
+
 
 function OffersModal() {
     return (
         <div className={styles.offersModal}>
+            <div className={styles.header}>
+                <h2>Teklif Ver</h2>
+                <span>X</span>
+            </div>
             <div className={styles.productDetail}>
                 <div className={styles.leftSide}>
                     <Image height={50} width={50} src={silinecekPng} />
@@ -17,8 +21,17 @@ function OffersModal() {
                 </div>
             </div>
             <div className={styles.offersBox}>
-                <div>
-                    <input type="checkbox" name="" id="" />
+                <div className={styles.offerBox}>
+                    <input type="checkbox" />
+                    <label htmlFor="">%20’si Kadar Teklif Ver</label>
+                </div>
+                <div className={styles.offerBox}>
+                    <input type="checkbox" />
+                    <label htmlFor="">%20’si Kadar Teklif Ver</label>
+                </div>
+                <div className={styles.offerBox}>
+                    <input type="checkbox" />
+                    <label htmlFor="">%20’si Kadar Teklif Ver</label>
                 </div>
             </div>
         </div >
