@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### :zap: Live
 
-## Getting Started
+###[İkinci El](https://ikinci-el-e-ticaret.vercel.app/)
 
-First, run the development server:
+# İkinci El Project [tr]
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+> Bu projede ikinci el ürünlerin satıldığı bir site yapıldı. Satılan ürünleri görebilirsiniz. Siteye üye olarak teklif verdiğiniz ürünleri ve yüklediğiniz ürünleri hesabım sayfasında görebilir ve ürün ekleden ürün ekleyebilirsiniz.
+> Bu proje bir e-ticaret sitesi olduğu için seo'nun öneminden dolayı ==Next.js== kullanılmıştır.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Proje ne yazık ki tamamlanmadı
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+> Responsive tasarım yapılmadı.
+> Popup'lar aktif değil.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Projeyi kullanabilmeniz için gerekenler
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/en/download/)
 
-## Learn More
+## Kurulum
 
-To learn more about Next.js, take a look at the following resources:
+1. Bir dosya oluşturulur.
+2. Üzerine sağ tıklanıp terminal açılır.
+3. Aşağıdaki metin terminale yazılarak proje kopyalanır. <br>
+   `git clone https://github.com/furkanpamuk/ikinci-el-e-commerce.git`
+4. Aşağıdaki metin terminale yazılarak proje dosyasına erişilir.<br>
+   `cd ikinci-el-e-commerce `
+5. Aşağıdaki metin terminale yazılarak Visual Studio Code ile proje açılır. <br>
+   `code .`
+6. Visual Studio Code'de terminal açılır ve alltaki metinler terminale yazılır.<br>
+   `npm install`
+7. Proje çalıştırılır.<br>
+   `npm run dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
+<hr>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# İkinci El Project [en]
 
-## Deploy on Vercel
+> In this project, a site where second-hand products are sold was built. You can see the products sold. As a member of the site, you can see the products you bid and the products you uploaded on the My Account page, and you can add products.
+> Since this project is an e-commerce site, ==Next.js== was used due to the importance of seo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### The project is unfortunately not completed
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> Responsive design wasn't done.
+> Popups aren't active.
+
+## Requirements to use the project
+
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/en/download/)
+
+## Setup
+
+1. A file is created.
+2. Right click on it and the terminal opens.
+3. The project is copied by typing the following text into the terminal.<br>
+   `git clone https://github.com/furkanpamuk/ikinci-el-e-commerce.git`
+4. The following text is typed into the terminal to access the project file.<br>
+   `cd ikinci-el-e-commerce `
+5. The project is opened with Visual Studio Code by typing the following text into the terminal.<br>
+   `code .`
+6. In Visual Studio Code, the terminal is opened and the texts below are written to the terminal.<br>
+   `npm install`
+7. And the project is run.<br>
+   `npm run dev`
