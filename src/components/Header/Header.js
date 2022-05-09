@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { useUserData } from '../../context/userContext';
 import Link from 'next/link';
 import { getCookies } from 'cookies-next';
+import { useEffect } from 'react';
 
 function Header() {
 
     const { isLogin, setIsLogin } = useUserData();
 
-    useState(() => {
+    useEffect(() => {
         if (getCookies('token')) {
             setIsLogin(true)
         }
