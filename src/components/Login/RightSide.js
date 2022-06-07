@@ -22,7 +22,6 @@ function RightSide() {
     const handleFormSubmit = async (values) => {
         setFormValues(values);
         const result = await authLogin(values)
-        console.log(result);
         if (result.statusType) {
             setUser(result.data?.user)
             setIsLogin(true)

@@ -37,7 +37,7 @@ function Categories({ categories, setSelectCategoryID }) {
           }
           <CategoryItem
             isActive={active === categories.length + 1}
-            index={categories.length + 1}
+            index={categories.length}
             key={categories.length}
             category={{ 'name': 'Diğer' }}
             setActive={setActive}

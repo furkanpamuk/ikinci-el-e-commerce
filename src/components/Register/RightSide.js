@@ -20,7 +20,7 @@ function RightSide() {
     const [formValues, setFormValues] = useState(defaultValues)
     const { setUser, setIsLogin } = useUserData();
 
-    const handleFormSubmit = async (values, resetForm) => {
+    const handleFormSubmit = async (values) => {
         const username = values.email.split('@')[0]
         const newValues = { ...values, username }
         setFormValues(newValues)
@@ -57,19 +57,17 @@ function RightSide() {
                                     .max(20, 'Şifre en fazla 20 karakter olmalıdır!')
                                     .required('Şifre alanı zorunludur!')
                             })}
-                            onSubmit={(values, { resetForm }) => handleFormSubmit(values, resetForm)}
+                            onSubmit={(values) => handleFormSubmit(values)}
                         >
                             {
                                 ({
                                     values,
-                                    touched,
                                     errors,
                                     handleChange,
                                     handleSubmit
                                 }) =>
                                     <RegisterForm
                                         values={values}
-                                        touched={touched}
                                         errors={errors}
                                         handleChange={handleChange}
                                         handleSubmit={handleSubmit}

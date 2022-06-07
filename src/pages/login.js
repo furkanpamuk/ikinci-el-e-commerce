@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import LoginComp from '../components/Login/Login'
 import Head from 'next/head'
 

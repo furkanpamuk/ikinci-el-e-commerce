@@ -36,19 +36,18 @@ function UploadProduct({ colorList, categoryList, brandList, statusList }) {
     const removeImage = () => {
 
         setMyFiles([])
-    };
+    }
     const onDrop = useCallback(
         (acceptedFiles) => {
-            setMyFiles([...myFiles, ...acceptedFiles]);
-        },
-        [myFiles]
-    );
+            setMyFiles([...myFiles, ...acceptedFiles])
+        }, [])
+
     const { getRootProps, getInputProps } = useDropzone({
         onDrop,
         accept: "image/jpeg, image/jpg, image/png",
         maxFiles: 1,
         maxSize: 400000,
-    });
+    })
 
 
     const handleFormSubmit = async (values, resetForm) => {
@@ -128,7 +127,7 @@ function UploadProduct({ colorList, categoryList, brandList, statusList }) {
                                     <p>Veya</p>
                                     <div className={styles.selectImage}>Görsel Seçin</div>
                                     <p className={styles.size}>
-                                        Png veya JPEG Dosya Boyutu: max. 100kb
+                                        Png veya JPEG Dosya Boyutu: max. 400kb
                                     </p>
                                 </div>
                             </>

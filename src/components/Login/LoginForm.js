@@ -20,7 +20,7 @@ function LoginForm({ values, errors, handleChange, handleSubmit }) {
             <InputField
                 label={'Şifre'}
                 inputType={'password'}
-                placeholder={'Lütfen şifreinizi girin'}
+                placeholder={'Lütfen şifrenizi girin'}
                 value={values.password}
                 handleChange={handleChange}
                 errorStatus={(errors.password) ? true : false}

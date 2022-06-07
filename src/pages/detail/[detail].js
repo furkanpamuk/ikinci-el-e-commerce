@@ -19,7 +19,6 @@ function Detail({ product }) {
 }
 
 export async function getServerSideProps(context) {
-
     const path = context.params.detail;
     const id = path.split('-').slice(-1)[0]
     const product = await getProductById(id)
