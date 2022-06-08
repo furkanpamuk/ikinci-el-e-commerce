@@ -12,7 +12,7 @@ margin-right: 10px;
 cursor: pointer;
 `
 
-const DetailBtn = ({ label, bgColor, labelColor, onClick = null }) => {
+const DetailBtn = ({ label, bgColor, labelColor, onClick }) => {
 
     return (
         <Button
@@ -21,6 +21,7 @@ const DetailBtn = ({ label, bgColor, labelColor, onClick = null }) => {
                 backgroundColor: bgColor,
                 color: labelColor
             }}
+            onClick={onClick}
         > {label}</Button >
     )
 }

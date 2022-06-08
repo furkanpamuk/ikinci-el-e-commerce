@@ -4,15 +4,19 @@ const ModalContext = createContext()
 
 const ModalProvider = ({ children }) => {
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
     const [modaltype, setModaltype] = useState(2)
+    const [selectProduct, setSelectProduct] = useState({})
 
     const data = {
         showModal,
         setShowModal,
 
         modaltype,
-        setModaltype
+        setModaltype,
+
+        selectProduct,
+        setSelectProduct
     }
     return (
         <ModalContext.Provider value={data}>

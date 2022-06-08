@@ -3,9 +3,19 @@ import Image from 'next/image'
 import styles from './Detail.module.scss'
 import Container from '../../constant/containers/Container'
 import DetailBtn from './DetailBtn'
+import { useModalData } from '../../context/modalContext'
 
 
 function Detail({ selectProduct }) {
+
+    const { setShowModal, setModaltype, setSelectProduct } = useModalData()
+
+    const handleOnclick = (type) => {
+        setShowModal(true)
+        setModaltype(type)
+        setSelectProduct(selectProduct)
+    }
+
     return (
         <Container>
             <div className={styles.detail}>
@@ -32,8 +42,18 @@ function Detail({ selectProduct }) {
                     </div>
                     <h3>{selectProduct.price} {process.env.currency}</h3>
                     <div>
-                        <DetailBtn label={'Satın Al'} bgColor={'#4B9CE2'} labelColor={'#fff'} />
-                        <DetailBtn label={'Teklif Ver'} bgColor={'#F0F8FF'} labelColor={'#4B9CE2'} />
+                        <DetailBtn
+                            onClick={() => handleOnclick(1)}
+                            label={'Satın Al'}
+                            bgColor={'#4B9CE2'}
+                            labelColor={'#fff'}
+                        />
+                        <DetailBtn
+                            onClick={() => handleOnclick(2)}
+                            label={'Teklif Ver'}
+                            bgColor={'#F0F8FF'}
+                            labelColor={'#4B9CE2'}
+                        />
                     </div>
                     <div className={styles.description}>
                         <h4>Açıklama</h4>
