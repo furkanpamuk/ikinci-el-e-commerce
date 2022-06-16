@@ -35,3 +35,9 @@ export const addNewProduct = (data) => {
         return res
     })
 }
+
+export const offerProduct = (data) => {
+    return API.post('offers', data).then(res => {
+        return res
+    })
+}

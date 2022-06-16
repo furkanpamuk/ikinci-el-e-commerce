@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Modal.module.scss'
 import Image from 'next/image'
-import silinecekPng from '../../assets/images/silinecek.png'
 import { useModalData } from '../../context/modalContext'
 import { useUserData } from '../../context/userContext'
-
+import { offerProduct } from '../../services/productService'
+import { errorMessage, successMessage } from '../../utils/helpers/toastHelper'
 
 function OffersModal() {
 
@@ -24,14 +24,24 @@ function OffersModal() {
         setOffer({ ...offer, offerPrice: newPrice })
     }
 
-    const handleOffer = () => {
-
-
-        console.log(offer);
+    const handleOffer = async () => {
+        if (offer.product > 0 && offer.users_permissions_user > 0 && offer.offerPrice > 0) {
+            const { statusType } = await offerProduct(offer)
+            if (statusType) {
+                setShowModal(false)
+                successMessage('Teklif Gönderildi')
+            }
+            else {
+                errorMessage('Teklif Gönderilemedi')
+            }
+        }
+        else {
+            errorMessage('Lütfen Teklif Veriniz')
+        }
     }
 
     useEffect(() => {
-        setOffer({ ...offer, product: selectProduct.id, users_permissions_user: user.id, offerPrice: selectProduct.price })
+        setOffer({ ...offer, product: selectProduct.id, users_permissions_user: user.id })
     }, [])
 
 
