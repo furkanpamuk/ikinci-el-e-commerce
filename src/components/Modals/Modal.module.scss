@@ -70,6 +70,7 @@
                     }
                     span {
                         font-size: 18px;
+                        cursor: pointer;
                     }
                 }
                 .productDetail {
@@ -100,6 +101,28 @@
                         }
                     }
                     
+                }
+                .offerInp {
+                    width: 100%;
+                    height: 45px;
+                    background-color: $input-background-color;
+                    border-radius: 8px;
+                    padding: 12px 15px;  
+                }
+                .btnBox {
+                    display: flex;
+                    justify-content: center;
+                    margin: 20px 0;
+
+                    button {
+                        width: 315px;
+                        height: 45px;
+                        background-color: $primary-color;
+                        border-radius: 8px;
+                        color: $background-light-color;
+                        cursor: pointer;
+                        font-size: 18px;
+                    }
                 }
             }
         }

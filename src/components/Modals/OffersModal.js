@@ -79,12 +79,15 @@ function OffersModal() {
                 </form>
             </div>
             <input
+                className={styles.offerInp}
                 onChange={e => setOffer({ ...offer, offerPrice: Number(e.target.value) })
                 }
                 type="number"
-                placeholder='teklif giriniz'
+                placeholder='Teklif Belirle'
             />
-            <button onClick={handleOffer} >Onayla</button>
+            <div className={styles.btnBox}>
+                <button onClick={handleOffer} >Onayla</button>
+            </div>
         </div >
     )
 }
