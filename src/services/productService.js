@@ -41,3 +41,9 @@ export const offerProduct = (data) => {
         return res
     })
 }
+
+export const deleteOffer = (id) => {
+    return API.delete(`offers/${id}`).then(res => {
+        return res
+    })
+}

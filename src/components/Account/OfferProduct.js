@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from './Account.module.scss'
 
 function OfferProduct({ product, offerPrice }) {
-    console.log('is here', offerPrice)
     return (
         <div className={styles.product}>
             <div className={styles.productInf} >

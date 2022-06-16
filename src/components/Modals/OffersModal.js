@@ -30,6 +30,7 @@ function OffersModal() {
             if (statusType) {
                 setShowModal(false)
                 successMessage('Teklif Gönderildi')
+                window.location.reload(true)
             }
             else {
                 errorMessage('Teklif Gönderilemedi')

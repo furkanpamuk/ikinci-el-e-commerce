@@ -4,7 +4,9 @@ import DetailComp from '../../components/Detail/Detail'
 import { getProductById } from '../../services/productService'
 import Head from 'next/head'
 
+
 function Detail({ product }) {
+
     return (
         <>
             <Layout>
