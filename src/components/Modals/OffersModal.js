@@ -18,8 +18,8 @@ function OffersModal() {
     const { setShowModal, selectProduct } = useModalData()
     const [offer, setOffer] = useState(defaultOffer)
 
-    const handleOfferPrice = (discountRate) => {
-        const newPrice = selectProduct.price - selectProduct.price * discountRate
+    const handleOfferPrice = (offerRate) => {
+        const newPrice = selectProduct.price * offerRate
 
         setOffer({ ...offer, offerPrice: newPrice })
     }
