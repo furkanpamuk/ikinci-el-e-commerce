@@ -19,7 +19,6 @@ function Detail({ selectProduct }) {
 
     const { setShowModal, setModaltype, setSelectProduct } = useModalData()
     const { user } = useUserData()
-
     const [existUserOffer, setExistUserOffer] = useState(defaultExistUserOfferValue)
 
     const handleDeleteOffer = async () => {
@@ -54,6 +53,7 @@ function Detail({ selectProduct }) {
 
     useEffect(() => {
         fillExistUserOffer()
+        console.log(selectProduct);
     }, [user])
 
     return (
@@ -84,28 +84,37 @@ function Detail({ selectProduct }) {
 
                     {existUserOffer.hasUserOffer && <h3>Verilen Teklif: {existUserOffer.userOfferPrice}</h3>}
 
-                    <div>
-                        <DetailBtn
-                            onClick={() => handleOnclick(1)}
-                            label={'Satın Al'}
-                            bgColor={'#4B9CE2'}
-                            labelColor={'#fff'}
-                        />
-                        {existUserOffer.hasUserOffer ?
+                    {
+                        selectProduct.isSold ?
                             <DetailBtn
-                                onClick={() => handleDeleteOffer()}
-                                label={'Teklifi Geri Çek'}
-                                bgColor={'#F0F8FF'}
-                                labelColor={'#4B9CE2'}
-                            /> :
-                            <DetailBtn
-                                onClick={() => handleOnclick(2)}
-                                label={'Teklif Ver'}
-                                bgColor={'#F0F8FF'}
-                                labelColor={'#4B9CE2'}
+                                label={'Bu Ürün Satışta Değil'}
+                                bgColor={'#FFF0E2'}
+                                labelColor={'#FAAD60'}
                             />
-                        }
-                    </div>
+                            :
+                            <div>
+                                <DetailBtn
+                                    onClick={() => handleOnclick(1)}
+                                    label={'Satın Al'}
+                                    bgColor={'#4B9CE2'}
+                                    labelColor={'#fff'}
+                                />
+                                {existUserOffer.hasUserOffer ?
+                                    <DetailBtn
+                                        onClick={() => handleDeleteOffer()}
+                                        label={'Teklifi Geri Çek'}
+                                        bgColor={'#F0F8FF'}
+                                        labelColor={'#4B9CE2'}
+                                    /> :
+                                    <DetailBtn
+                                        onClick={() => handleOnclick(2)}
+                                        label={'Teklif Ver'}
+                                        bgColor={'#F0F8FF'}
+                                        labelColor={'#4B9CE2'}
+                                    />
+                                }
+                            </div>
+                    }
                     <div className={styles.description}>
                         <h4>Açıklama</h4>
                         <p>{selectProduct.description}</p>
