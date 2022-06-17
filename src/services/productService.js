@@ -47,3 +47,9 @@ export const deleteOffer = (id) => {
         return res
     })
 }
+
+export const buyProduct = (data) => {
+    return API.put(`products/${data.id}`, data).then(res => {
+        return res
+    })
+}

@@ -26,6 +26,12 @@ const _delete = (endpoint, contentType, hasToken = true, token = null) => {
     })
 }
 
+const _put = (endpoint, data, contentType, hasToken = true, token = null) => {
+    return axios.put(endpoint, data, getHeader(contentType, hasToken, token)).then(handleResponse).catch(error => {
+        return handleResponse(error.response)
+    })
+}
+
 const handleResponse = (response) => {
     const data = response.data
 
@@ -77,5 +83,6 @@ const getHeader = (contentType, hasToken = true, token = null) => {
 export const API = {
     'get': _get,
     'post': _post,
-    'delete': _delete
+    'delete': _delete,
+    'put': _put
 };
