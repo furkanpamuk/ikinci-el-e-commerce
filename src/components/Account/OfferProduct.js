@@ -1,8 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from './Account.module.scss'
+import { useModalData } from '../../context/modalContext'
 
 function OfferProduct({ product, offerPrice }) {
+
+    const { setShowModal, setSelectProduct, setModaltype } = useModalData()
+
+    const handleOnclick = (type) => {
+        setShowModal(true)
+        setModaltype(type)
+        setSelectProduct(product)
+    }
+
     return (
         <div className={styles.product}>
             <div className={styles.productInf} >
@@ -13,7 +23,7 @@ function OfferProduct({ product, offerPrice }) {
                 </div>
             </div>
             <div className={styles.buttons} >
-                <button className={styles.acceptBtn} >Satın Al</button>
+                <button className={styles.acceptBtn} onClick={() => handleOnclick(1)} >Satın Al</button>
                 <div>Onaylandı</div>
             </div>
         </div>
