@@ -4,18 +4,18 @@ import AccountComp from '../components/Account/Account'
 import { getUserProducts, getUserOffers } from '../services/accountService'
 import * as cookie from 'cookie'
 import Head from 'next/head'
-import { useUserData } from '../context/userContext'
 import Router from 'next/router'
+import { getCookie } from 'cookies-next'
 
 function Account({ userProducts, userOffers }) {
 
-    const { isLogin } = useUserData();
-
     useEffect(() => {
-        if (!isLogin) {
+        const userCookie = getCookie('user')
+        if (!userCookie) {
             Router.push('/login')
         }
-    }, [isLogin])
+
+    }, [])
 
     return (
         <Layout>
