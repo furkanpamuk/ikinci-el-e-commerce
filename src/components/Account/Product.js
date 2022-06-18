@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from './Account.module.scss'
 
 
 function Product({ product }) {
-    console.log(product);
+
+    const [status, setStatus] = useState(null)
+
     return (
         <div className={styles.product}>
             <div className={styles.productInf} >
@@ -15,8 +17,24 @@ function Product({ product }) {
                 </div>
             </div>
             <div className={styles.buttons} >
-                <button className={styles.acceptBtn} >Onayla</button>
-                <button className={styles.rejectBtn} >Reddet</button>
+
+                {
+                    !status &&
+                    <>
+                        <button className={styles.acceptBtn} onClick={() => setStatus('accepted')}>Onayla</button>
+                        <button className={styles.rejectBtn} onClick={() => setStatus('rejected')}>Reddet</button>
+                    </>
+                }
+                {
+                    status === 'accepted' && <div>Onaylandı</div>
+                }
+                {
+                    status === 'rejected' && <div>Reddedildi</div>
+                }
+
+
+
+
             </div>
         </div>
     )
