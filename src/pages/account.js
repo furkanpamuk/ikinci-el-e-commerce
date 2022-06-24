@@ -10,7 +10,7 @@ import { getCookie } from 'cookies-next'
 function Account({ userProducts, userOffers }) {
 
     useEffect(() => {
-        const userCookie = getCookie('user')
+        const userCookie = getCookie('token')
         if (!userCookie) {
             Router.push('/login')
         }
